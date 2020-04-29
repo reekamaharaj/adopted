@@ -1,0 +1,36 @@
+<h1>Adoptable and adopted cats!</h1>
+
+<h2>Cats for adoption</h2>
+<ul>
+    {{#each cats}}
+        {{#unless adopted}}
+            {{> cats/cat-block adopted=true}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+
+<h2>Cats with forever homes!</h2>
+<ul>
+    {{#each cats}}
+        {{#if adopted}}
+            {{> cats/cat-block adopted=false}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Add a Cat!</h2>
+
+<form class="create-form">
+    <div class="form-group">
+        <label for="catName">Cat Name:</label>
+        <input type="text" id="catName">
+    </div>
+    <div class="form-group">
+        <label for="adopted">Have they been adopted?</label><br>
+        <input type="radio" name="adopted" value="1" checked>For adoption<br>
+        <input type="radio" name="adopted" value="0">Adopted!
+    </div>
+
+    <button type="submit">Add Cat</button>
+</form>
