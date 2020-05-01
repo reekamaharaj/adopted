@@ -1,5 +1,6 @@
-// Require express, dependancy
+// Require express and handlebar, dependancies
 const express = require("express");
+const exphbs = require("express-handlebars");
 
 // Set port for application
 const PORT = process.env.PORT || 8080;
@@ -14,9 +15,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set Handlebars
-const exphbs = require("express-handlebars");
-
+// Set Handlebar Middleware
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
@@ -28,4 +27,4 @@ app.use(routes);
 // Start server so it begins listening for client requests
 app.listen(PORT, function(){
     console.log("Server listening on: http://localhost:" + PORT);
-})
+});

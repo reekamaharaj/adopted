@@ -1,23 +1,29 @@
-// Import the ORM to create functions that will interact with database
 const orm = require("../config/orm.js");
 
-let cat = {
-    all: function(){
-
+const cat = {
+    all: function(cb) {
+        orm.all("cats", function(res) {
+            cb(res);
+        });
     },
 
-    create: function(){
-
+    create: function(cols, vals, cb) {
+        orm.create("cats", cols, vals, function(res) {
+            cb(res);
+        });
     },
 
-    update: function(){
-
+    update: function(condition, cb) {
+        orm.delete("cats", condition, function(res) {
+            cb(res);
+        });
     },
 
-    delete: function(){
-
+    delete: function(condition, cb) {
+        orm.delete("cats", condition, function(res) {
+            cb(res);
+        });
     }
 };
 
-// Export the database functions for the controller (cat_controller.js)
 module.exports = cat;
