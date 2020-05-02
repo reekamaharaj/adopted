@@ -2,7 +2,7 @@
 const connection = require("../config/connection.js");
 
 //function that will take a number and create an array with that number of "?"
-function printQuestionMarks(num){
+function printQuestionMarks(num) {
     let arr = [ ];
 
     for (let i = 0; i < num; i++) {
@@ -11,10 +11,10 @@ function printQuestionMarks(num){
     return arr.toString();
 }
 
-function objToSql(obj) {
-    let arr = [];
+function objToSql(ob) {
+    let arr = [ ];
 
-    for (let key in obj) {
+    for (let key in ob) {
         let value = ob[key];
 
         if (Object.hasOwnProperty.call(ob, key)) {
@@ -36,7 +36,7 @@ const orm = {
             if (err) {
                 throw err;
             }
-            cb(results);
+            cb(result);
         });
     },
 

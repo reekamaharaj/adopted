@@ -55,7 +55,7 @@ router.delete("/api/cats/:id", function(_req, res) {
         if (result.affectedRows == 0) {
             return res.status(404).end();
         } else {
-            res.status(200).end;
+            res.status(200).end();
         }
     });
 });

@@ -4,7 +4,7 @@
 <ul>
     {{#each cats}}
         {{#unless adopted}}
-            {{> cats/cat-block adopted=true}}
+            {{> cats/cat-block adopt=true}}
         {{/unless}}
     {{/each}}
 </ul>
@@ -14,7 +14,7 @@
 <ul>
     {{#each cats}}
         {{#if adopted}}
-            {{> cats/cat-block adopted=false}}
+            {{> cats/cat-block adopt=false}}
         {{/if}}
     {{/each}}
 </ul>

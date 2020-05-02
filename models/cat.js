@@ -13,8 +13,8 @@ const cat = {
         });
     },
 
-    update: function(condition, cb) {
-        orm.delete("cats", condition, function(res) {
+    update: function(objColVals, condition, cb) {
+        orm.update("cats",objColVals, condition, function(res) {
             cb(res);
         });
     },

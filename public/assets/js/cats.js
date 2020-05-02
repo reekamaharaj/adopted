@@ -1,7 +1,7 @@
 $(function() {
     $(".change-adopt").on("click", function(event) {
         let id = $(this).data("id");
-        let newSleep = $(this).data("newadopt");
+        let newAdopt = $(this).data("newadopt");
 
         let newAdoptState = {
             adopted: newAdopt
@@ -15,7 +15,7 @@ $(function() {
                 console.log("changed adopt to", newAdopt);
                 location.reload();
             }
-        )
+        );
     });
 
     $(".create-form").on("submit", function(event){
@@ -26,7 +26,7 @@ $(function() {
             adopted: $("[name=adopted]:checked").val().trim()
         };
 
-        $.ajax("api/cats", {
+        $.ajax("/api/cats", {
             type: "POST",
             data: newCat
         }).then(
