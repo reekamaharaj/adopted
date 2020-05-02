@@ -1,8 +1,8 @@
 // Require MySQL dependancy
-const mysql = require("mysql");
+var mysql = require("mysql");
 
 // MySQL connection data
-const connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 });
 
 // Connection to MySQL
-connection.connect(function(err){
+connection.connect(function(err) {
     if (err) {
         console.error("error connecting: " + err.stack);
         return;
