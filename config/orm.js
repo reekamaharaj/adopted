@@ -1,21 +1,21 @@
 // Import MySQL connection
-const connection = require("../config/connection.js");
+var connection = require("../config/connection.js");
 
 //function that will take a number and create an array with that number of "?"
 function printQuestionMarks(num) {
-    let arr = [ ];
+    var arr = [ ];
 
-    for (let i = 0; i < num; i++) {
+    for (var i = 0; i < num; i++) {
         arr.push("?");
     }
     return arr.toString();
 }
 
 function objToSql(ob) {
-    let arr = [ ];
+    var arr = [ ];
 
-    for (let key in ob) {
-        let value = ob[key];
+    for (var key in ob) {
+        var value = ob[key];
 
         if (Object.hasOwnProperty.call(ob, key)) {
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
@@ -28,10 +28,10 @@ function objToSql(ob) {
 }
 
 //orm is an object that will have all SQL statements needed as functions. Key will be the function name and the value will be 
-const orm = {
+var orm = {
 
     all: function(tableInput, cb) {
-        const queryString = "SELECT * FROM " + tableInput + ";";
+        var queryString = "SELECT * FROM " + tableInput + ";";
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
@@ -41,7 +41,7 @@ const orm = {
     },
 
     create: function(table, cols, vals, cb) {
-        const queryString = "INSERT INTO " + table;
+        var queryString = "INSERT INTO " + table;
 
         queryString += " (";
         queryString += cols.toString();
@@ -62,10 +62,11 @@ const orm = {
     },
 
     update: function(table, objColVals, condition, cb) {
-        const queryString = "UPDATE " + table;
+        var queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVals);
+        queryString += " WHERE ";
         queryString += condition;
 
         console.log(queryString);
@@ -78,7 +79,7 @@ const orm = {
     },
 
     delete: function(table, condition, cb) {
-        const queryString = "DELETE FROM " + table;
+        var queryString = "DELETE FROM " + table;
         queryString += " WHERE ";
         queryString += condition;
 

@@ -1,12 +1,12 @@
 // Require express and handlebar, dependancies
-const express = require("express");
-const exphbs = require("express-handlebars");
+var express = require("express");
+var exphbs = require("express-handlebars");
 
 // Set port for application
-const PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 8080;
 
 // Create an instance of the express app
-const app = express();
+var app = express();
 
 // Serve static content for the app from the "public" directory in the application directory
 app.use(express.static("public"));
@@ -20,7 +20,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them
-const routes = require("./controllers/cat_controller.js");
+var routes = require("./controllers/cat_controller.js");
 
 app.use(routes);
 

@@ -5,6 +5,6 @@ CREATE TABLE cats
 (
     id int NOT NULL AUTO_INCREMENT,
     name varchar(255) NOT NULL,
-    adopted BOOLEAN DEFAULT false,
+    adoptable BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );

@@ -1,16 +1,16 @@
 // Require express
-const express = require("express");
+var express = require("express");
 
 //Connect to express router
-const router = express.Router();
+var router = express.Router();
 
 // Import model JS to use the database functions
-const cat = require("../models/cat.js");
+var cat = require("../models/cat.js");
 
 // Route creation with logic for routes
 
 // Route to get data
-router.get("/", function(_req, res){
+router.get("/", function(req, res){
     cat.all(function(data) {
         let hbsObject = {
             cats: data
@@ -21,23 +21,23 @@ router.get("/", function(_req, res){
 });
 
 //Route to post data
-router.post("/api/cats", function(_req, res){
+router.post("/api/cats", function(req, res){
     cat.create([
-        "name", "adopted"
+        "name", "adoptable"
     ], [
-        req.body.name, req.body.adopted
+        req.body.name, req.body.adoptable
     ], function(result) {
         res.json({ id: result.insertId });
     });
 });
 
 //Route to put data
-router.put("/api/cats/:id", function(_req, res) {
+router.put("/api/cats/:id", function(req, res) {
     let condition = "id = " + req.params.id;
     console.log("condition", condition);
 
     cat.update({
-        adopted: req.body.adopted
+        adoptable: req.body.adoptable
     }, condition, function(result) { 
         if (result.changedRows == 0) {
             return res.status(404).end();
@@ -48,7 +48,7 @@ router.put("/api/cats/:id", function(_req, res) {
 });
 
 // Route to delete data
-router.delete("/api/cats/:id", function(_req, res) {
+router.delete("/api/cats/:id", function(req, res) {
     let condition = "id = " + req.params.id;
 
     cat.delete(condition, function(result) {

@@ -4,7 +4,7 @@ $(function() {
         let newAdopt = $(this).data("newadopt");
 
         let newAdoptState = {
-            adopted: newAdopt
+            adoptable: newAdopt
         };
 
         $.ajax("/api/cats/" + id, {
@@ -22,8 +22,8 @@ $(function() {
         event.preventDefault();
 
         let newCat = {
-            name: $("#catName").val().trim(),
-            adopted: $("[name=adopted]:checked").val().trim()
+            name: $("#ca").val().trim(),
+            adoptable: $("[name=adoptable]:checked").val().trim()
         };
 
         $.ajax("/api/cats", {
