@@ -1,3 +1,5 @@
+USE cat_db;
+
 INSERT INTO cats (name) VALUES ('Journey');
 INSERT INTO cats (name) VALUES ('Oran');
 INSERT INTO cats (name) VALUES ('Vienna');

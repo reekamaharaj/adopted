@@ -16,10 +16,5 @@
     "url": "https://github.com/reekamaharaj/adopted/issues"
   },
   "homepage": "https://github.com/reekamaharaj/adopted#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^4.0.4",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.3"
-  }
+  "dependencies": {}
 }
