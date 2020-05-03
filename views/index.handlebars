@@ -1,9 +1,12 @@
-<h1 class="jumbotron jumbotron-fluid text-center shadow p-3 mb-5 bg-dark rounded m-2 p-3 mb-2 text-white">Adopt a cat</h1>
-
+{{!-- <h1 class="jumbotron jumbotron-fluid text-center shadow p-3 mb-5 bg-dark rounded m-2 p-3 mb-2 text-white">Adopt a cat</h1> --}}
+<div class="text-center">
+<img src="/assets/img/banner.png" class="img-fluid" alt="Responsive image">
+</div>
+>
 <div class="container">
     <div class="row">
-        <div class="col">
-            <h2 class="text-white">These cats are looking for a new home!</h2>
+        <div class="col text-center">
+            <h2 style="color: #FF914C">Adoptable Cats</h2>
             <ul class="list-group list-group-flush">
                 {{#each cats}}
                 {{#unless adoptable}}
@@ -12,8 +15,8 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col">
-            <h2 class="text-white">YAY!! These cats have found their furrever home!</h2>
+        <div class="col text-center">
+            <h2 style="color: #FF914C">Yay! Adopted!</h2>
             <ul class="list-group list-group-flush">
                 {{#each cats}}
                 {{#if adoptable}}
@@ -22,10 +25,10 @@
                 {{/each}}
             </ul>
         </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body bg-light">
-                    <h5 class="card-title">Add a Cat!</h5>
+        <div class="col border-0">
+            <div class="card border-0" style="width: 18rem;">
+                <div class="card-body rounded" style="background-color: #FF914C">
+                    <h4 class="card-title">Add a Cat!</h4>
                     <form class="create-form">
                         <div class="form-group">
                             <label for="catName">Cat Name:</label>

@@ -1,12 +1,12 @@
-<div class="card" style="width: 18rem;">
-    <div class="card p-2">
-        <li class="list-group-item">
-            {{name}}
+<div class="card border-0 m-2">
+    <div class="card border-0">
+        <li class="list-group-item rounded" style="background-color: #FF914C">
+            <h3>{{name}}</h3>
 
-            <button class="change-adopt badge badge-info" data-id="{{id}}" data-newadopt="{{adopt}}">
+            <button class="change-adopt badge badge-dark border-0 m-2 p-2"  data-id="{{id}}" data-newadopt="{{adopt}}">
                 {{#if adopt}}Adopt!{{else}}Unadopt :c{{/if}}
             </button>
-            <button class="delete-cat badge badge-info" data-id="{{this.id}}">DELETE</button>
+            <button class="delete-cat badge badge-dark border-0 m-2 p-2" data-id="{{this.id}}">Remove</button>
         </li>
     </div>
 </div>
