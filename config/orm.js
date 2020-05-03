@@ -1,7 +1,6 @@
 // Import MySQL connection
 var connection = require("../config/connection.js");
 
-//function that will take a number and create an array with that number of "?"
 function printQuestionMarks(num) {
     var arr = [ ];
 
@@ -27,7 +26,7 @@ function objToSql(ob) {
     return arr.toString();
 }
 
-//orm is an object that will have all SQL statements needed as functions. Key will be the function name and the value will be 
+
 var orm = {
 
     all: function(tableInput, cb) {
@@ -93,6 +92,4 @@ var orm = {
     }
 };
 
-
-// Export orm object for model (cat.js);
 module.exports = orm;

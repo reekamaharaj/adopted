@@ -1,15 +1,10 @@
-// Require express
+
 var express = require("express");
 
-//Connect to express router
 var router = express.Router();
 
-// Import model JS to use the database functions
 var cat = require("../models/cat.js");
 
-// Route creation with logic for routes
-
-// Route to get data
 router.get("/", function(req, res){
     cat.all(function(data) {
         let hbsObject = {
@@ -20,7 +15,6 @@ router.get("/", function(req, res){
     });
 });
 
-//Route to post data
 router.post("/api/cats", function(req, res){
     cat.create([
         "name", "adoptable"
@@ -31,7 +25,6 @@ router.post("/api/cats", function(req, res){
     });
 });
 
-//Route to put data
 router.put("/api/cats/:id", function(req, res) {
     let condition = "id = " + req.params.id;
     console.log("condition", condition);
@@ -47,7 +40,6 @@ router.put("/api/cats/:id", function(req, res) {
     });
 });
 
-// Route to delete data
 router.delete("/api/cats/:id", function(req, res) {
     let condition = "id = " + req.params.id;
 
@@ -60,5 +52,4 @@ router.delete("/api/cats/:id", function(req, res) {
     });
 });
 
-//Export router for server.js to use
 module.exports = router;

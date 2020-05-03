@@ -22,7 +22,7 @@ $(function() {
         event.preventDefault();
 
         let newCat = {
-            name: $("#ca").val().trim(),
+            name: $("#catName").val().trim(),
             adoptable: $("[name=adoptable]:checked").val().trim()
         };
 
