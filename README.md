@@ -1,5 +1,5 @@
 # adopted
-Browser app created to log rescue cats up for adoption and easily move them from adoptable to adopted.
+Browser app created to log rescue cats up for adoption and easily move them from adoptable to adopted. Will be integrated into the cat finder app Catster.
 
 [Link to page](https://infinite-sea-58853.herokuapp.com/)
 
