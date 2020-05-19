@@ -1,6 +1,5 @@
 
 var express = require("express");
-
 var router = express.Router();
 
 var cat = require("../models/cat.js");
@@ -16,11 +15,7 @@ router.get("/", function(req, res){
 });
 
 router.post("/api/cats", function(req, res){
-    cat.create([
-        "name", "adoptable"
-    ], [
-        req.body.name, req.body.adoptable
-    ], function(result) {
+    cat.create(["name", "adoptable"], [req.body.name, req.body.adoptable], function(result) {
         res.json({ id: result.insertId });
     });
 });
